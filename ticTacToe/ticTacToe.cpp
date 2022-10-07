@@ -18,7 +18,7 @@ void display_board() {
 
     //Rander Game Board LAYOUT
 
-    cout << "PLAYER - 1 [X]t PLAYER - 2 [O]nn";
+    cout << "PLAYER - 1 [X]t PLAYER - 2 [O]\n\n";
     cout << "tt     |     |     n";
     cout << "tt  " << board[0][0] << "  | " << board[0][1] << "  |  " << board[0][2] << " n";
     cout << "tt_____|_____|_____n";
@@ -109,8 +109,8 @@ bool gameover() {
 
 int main()
 {
-    cout << "tttT I C K -- T A C -- T O E -- G A M Ettt";
-    cout << "nttttFOR 2 PLAYERSnttt";
+    cout << "TIC - TAC - TOE\n ";
+    cout << "Two Player Game \n ";
     while (gameover()) {
         display_board();
         player_turn();
