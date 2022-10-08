@@ -3,7 +3,18 @@
 //Importing the inbuild libraries in CPP
 #include <iostream>
 #include <stdlib.h>
+#include "myHeader.h"
 using namespace std;
+
+//Array for the board
+char board[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
+//Variable Declaration
+int choice;
+int row, column;
+char turn = 'X';
+bool draw = false;
+
+//Function to show the current status of the gaming board
 //Array for the board
 char board[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
 //Variable Declaration
@@ -17,6 +28,7 @@ bool draw = false;
 void display_board() {
 
     //Rander Game Board LAYOUT
+    system("CLS");
 
     cout << "PLAYER - 1 [X]t PLAYER - 2 [O]\n\n";
     cout << "\t\t     |     |     \n";
@@ -28,6 +40,7 @@ void display_board() {
     cout << "\t\t     |     |     \n";
     cout << "\t\t  " << board[2][0] << "  |  " << board[2][1] << "  |  " << board[2][2] << " \n";
     cout << "\t\t     |     |     \n";
+
 }
 
 //Function to get the player input and update the board
@@ -43,6 +56,7 @@ void player_turn() {
     //updating the board according to choice and reassigning the turn Start
 
     cin >> choice;
+
 
     //switch case to get which row and column will be update
 
@@ -74,10 +88,11 @@ void player_turn() {
     }
     else {
         //if input position already filled
-        cout << "Box already filled!n Please choose another!!nn";
+        cout << "Box already filled!n Please choose another!!\n\n";
         player_turn();
     }
     /* Ends */
+
     display_board();
 }
 
@@ -117,10 +132,12 @@ int main()
         gameover();
     }
     if (turn == 'O' && draw == false) {
-        cout << "\n\nCongratulations!Player with 'X' has won the game";
+        system("CLS");
+        cout << "\n\nCongratulations! Player with 'X' has won the game\n \n \n";
     }
     else if (turn == 'X' && draw == false) {
-        cout << "\n\n Congratulations!Player with 'O' has won the game";
+        system("CLS");
+        cout <<  "\n\n Congratulations! Player with 'O' has won the game\n \n \n";
     }
     else
         cout << "\n\nGAME DRAW!!!\n\n";
