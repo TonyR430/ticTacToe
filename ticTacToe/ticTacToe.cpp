@@ -24,6 +24,7 @@ char turn = 'X';
 bool draw = false;
 
 //Function to show the current status of the gaming board
+//Added Clear screen command to keep screen from filling up
 
 void display_board() {
 
