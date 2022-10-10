@@ -3,7 +3,6 @@
 //Importing the inbuild libraries in CPP
 #include <iostream>
 #include <stdlib.h>
-#include "myHeader.h"
 using namespace std;
 
 //Array for the board
