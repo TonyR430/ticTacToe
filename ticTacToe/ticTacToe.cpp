@@ -1,21 +1,19 @@
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
-//Array for the board
 char board[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
-//Variable Declaration
 int choice;
 int row, column;
 char turn = 'X';
 bool draw = false;
 
-//Function to show the current status of the gaming board
+//draws the board, shows current player moves, clears the screen after each move
 
 void display_board() {
     system("CLS");
 
 
-    //Rander Game Board LAYOUT
+    //Renders the game board
 
     cout << "PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
     cout << "\t\t     |     |     \n";
@@ -39,12 +37,8 @@ void player_turn() {
     else if (turn == 'O') {
         cout << "\n\tPlayer - 2 [O] turn : ";
     }
-    //Taking input from user
-    //updating the board according to choice and reassigning the turn Start
-
+   
     cin >> choice;
-
-    //switch case to get which row and column will be update
 
     switch (choice) {
     case 1: row = 0; column = 0; break;
@@ -61,53 +55,51 @@ void player_turn() {
     }
 
     if (turn == 'X' && board[row][column] != 'X' && board[row][column] != 'O') {
-        //updating the position for 'X' symbol if
-        //it is not already occupied
+        //Add's X's move and makes sure the square isn't already taken
         board[row][column] = 'X';
         turn = 'O';
     }
     else if (turn == 'O' && board[row][column] != 'X' && board[row][column] != 'O') {
-        //updating the position for 'O' symbol if
-        //it is not already occupied
+       //Add's O's move and makes sure the square isn't already taken
         board[row][column] = 'O';
         turn = 'X';
     }
     else {
-        //if input position already filled
+        //Prompts for a new choice if square is taken
         cout << "Box already filled!n Please choose another!!\n\n";
         player_turn();
     }
-    /* Ends */
+   
     
     display_board();
 }
 
-//Function to get the game status e.g. GAME WON, GAME DRAW GAME IN CONTINUE MODE
+//Below checks current status of the board, if a player won, its a draw, or if the game will continue
 
 bool gameover() {
-    //checking the win for Simple Rows and Simple Column
+    //Checks for win rows\columns 
     for (int i = 0; i < 3; i++)
         if (board[i][0] == board[i][1] && board[i][0] == board[i][2] || board[0][i] == board[1][i] && board[0][i] == board[2][i])
             return false;
 
-    //checking the win for both diagonal
+   //Checks for win diagonally
 
     if (board[0][0] == board[1][1] && board[0][0] == board[2][2] || board[0][2] == board[1][1] && board[0][2] == board[2][0])
         return false;
 
-    //Checking the game is in continue mode or not
+    //Determines if game contin
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
             if (board[i][j] != 'X' && board[i][j] != 'O')
                 return true;
 
-    //Checking the if game already draw
+    //Determines if game is a draw
     draw = true;
     return false;
    
 }
 
-//Program Main Method
+//Main function
 
 int main()
 {
