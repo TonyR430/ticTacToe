@@ -1,12 +1,6 @@
-//Tic Tac Toe Game in C++
-// Still not working, need to fix
-
-//Importing the inbuild libraries in CPP
-//Still need to fix, been busy day
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
-
 //Array for the board
 char board[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
 //Variable Declaration
@@ -16,49 +10,36 @@ char turn = 'X';
 bool draw = false;
 
 //Function to show the current status of the gaming board
-//Array for the board
-char board[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
-//Variable Declaration
-int choice;
-int row, column;
-char turn = 'X';
-bool draw = false;
-
-//Function to show the current status of the gaming board
-//Added Clear screen command to keep screen from filling up
 
 void display_board() {
 
     //Rander Game Board LAYOUT
-    system("CLS");
 
-    cout << "PLAYER - 1 [X]t PLAYER - 2 [O]\n\n";
-    cout << "\t\t     |     |     \n";
-    cout << "\t\t  " << board[0][0] << "  |  " << board[0][1] << "  |  " << board[0][2] << " \n";
-    cout << "\t\t_____|_____|_____\n";
-    cout << "\t\t     |     |     \n";
-    cout << "\t\t  " << board[1][0] << "  |  " << board[1][1] << "  |  " << board[1][2] << " \n";
-    cout << "\t\t_____|_____|_____\n";
-    cout << "\t\t     |     |     \n";
-    cout << "\t\t  " << board[2][0] << "  |  " << board[2][1] << "  |  " << board[2][2] << " \n";
-    cout << "\t\t     |     |     \n";
-
+    cout << "PLAYER - 1 [X]t PLAYER - 2 [O]nn";
+    cout << "tt     |     |     n";
+    cout << "tt  " << board[0][0] << "  | " << board[0][1] << "  |  " << board[0][2] << " n";
+    cout << "tt_____|_____|_____\n";
+    cout << "tt     |     |     \n";
+    cout << "tt  " << board[1][0] << "  | " << board[1][1] << "  |  " << board[1][2] << " n";
+    cout << "tt_____|_____|_____\n";
+    cout << "tt     |     |     \n";
+    cout << "tt  " << board[2][0] << "  | " << board[2][1] << "  |  " << board[2][2] << " n";
+    cout << "tt     |     |     \n";
 }
 
 //Function to get the player input and update the board
 
 void player_turn() {
     if (turn == 'X') {
-        cout << "ntPlayer - 1 [X] turn : ";
+        cout << "\n\tPlayer - 1 [X] turn : ";
     }
     else if (turn == 'O') {
-        cout << "ntPlayer - 2 [O] turn : ";
+        cout << "\n\tPlayer - 2 [O] turn : ";
     }
     //Taking input from user
     //updating the board according to choice and reassigning the turn Start
 
     cin >> choice;
-
 
     //switch case to get which row and column will be update
 
@@ -90,11 +71,10 @@ void player_turn() {
     }
     else {
         //if input position already filled
-        cout << "Box already filled!n Please choose another!!\n\n";
+        cout << "Box already filled!n Please choose another!!nn";
         player_turn();
     }
     /* Ends */
-
     display_board();
 }
 
@@ -126,21 +106,19 @@ bool gameover() {
 
 int main()
 {
-    cout << "TIC - TAC - TOE\n ";
-    cout << "Two Player Game \n ";
+    cout << "\t\t\tT I C K -- T A C -- T O E -- G A M E\t\t\t";
+    cout << "\n\t\t\t\tFOR 2 PLAYERS\n\t\t\t";
     while (gameover()) {
         display_board();
         player_turn();
         gameover();
     }
     if (turn == 'O' && draw == false) {
-        system("CLS");
-        cout << "\n\nCongratulations! Player with 'X' has won the game\n \n \n";
+        cout << "\n\n\nCongratulations!Player with 'X' has won the game";
     }
     else if (turn == 'X' && draw == false) {
-        system("CLS");
-        cout <<  "\n\n Congratulations! Player with 'O' has won the game\n \n \n";
+        cout << "\n\n\nCongratulations!Player with 'O' has won the game";
     }
     else
-        cout << "\n\nGAME DRAW!!!\n\n";
+        cout << "\n\nGAME DRAW!!!nn";
 }
