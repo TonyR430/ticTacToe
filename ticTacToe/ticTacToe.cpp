@@ -74,7 +74,7 @@ void player_turn() {
     }
     else {
         //if input position already filled
-        cout << "Box already filled!n Please choose another!!nn";
+        cout << "Box already filled!n Please choose another!!\n\n";
         player_turn();
     }
     /* Ends */
