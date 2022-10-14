@@ -12,6 +12,8 @@ bool draw = false;
 //Function to show the current status of the gaming board
 
 void display_board() {
+    system("CLS");
+
 
     //Rander Game Board LAYOUT
 
@@ -76,6 +78,7 @@ void player_turn() {
         player_turn();
     }
     /* Ends */
+    
     display_board();
 }
 
@@ -101,6 +104,7 @@ bool gameover() {
     //Checking the if game already draw
     draw = true;
     return false;
+   
 }
 
 //Program Main Method
@@ -121,5 +125,5 @@ int main()
         cout << "\n\n\nCongratulations!Player with 'O' has won the game";
     }
     else
-        cout << "\n\nGAME DRAW!!!nn";
+        cout << "\n\nGAME DRAW!!!\n\n";
 }
