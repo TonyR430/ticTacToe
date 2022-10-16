@@ -99,7 +99,7 @@ bool gameover() {
    
 }
 
-//Main function
+//Main function, calls prior functions to draw board, get turns, and check for win
 
 int main()
 {
