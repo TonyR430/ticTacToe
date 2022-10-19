@@ -10,6 +10,7 @@ bool draw = false;
 //draws the board, shows current player moves, clears the screen after each move
 
 void display_board() {
+
     system("CLS");
 
 
