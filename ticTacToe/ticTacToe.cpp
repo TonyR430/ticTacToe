@@ -84,6 +84,7 @@ bool gameover() {
             return false;
 
    //Checks for win diagonally
+    // this is a push
 
     if (board[0][0] == board[1][1] && board[0][0] == board[2][2] || board[0][2] == board[1][1] && board[0][2] == board[2][0])
         return false;
