@@ -8,6 +8,7 @@ char turn = 'X';
 bool draw = false;
 
 //draws the board, shows current player moves, clears the screen after each move
+//Push
 
 void display_board() {
 
